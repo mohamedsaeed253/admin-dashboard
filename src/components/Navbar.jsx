@@ -5,7 +5,6 @@ import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
 import MenuIcon from "@mui/icons-material/Menu";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
-import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import EditIcon from "@mui/icons-material/Edit";
 import ArchiveIcon from "@mui/icons-material/Archive";
@@ -26,6 +25,8 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 import { Logout, PersonAdd } from "@mui/icons-material";
+import AvatarImg from "../Assets/Images/1.jpg";
+
 const drawerWidth = 240;
 
 const Search = styled("div")(({ theme }) => ({
@@ -175,7 +176,7 @@ export default function Navbar({ open, handleDrawerOpen, setDarkMode }) {
           </IconButton>
           <IconButton
             onClick={handleClick2}
-            aria-controls={open ? "account-menu1" : undefined}
+            aria-controls={open ? "account-menu2" : undefined}
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
             color="inherit"
@@ -251,7 +252,11 @@ export default function Navbar({ open, handleDrawerOpen, setDarkMode }) {
             aria-expanded={open ? "true" : undefined}
             color="inherit"
           >
-            <PersonOutlineOutlinedIcon />
+            <Avatar
+              sx={{ border: "solid 3px White", width: 40, height: 40 }}
+              alt="Muhammed Saeed"
+              src={AvatarImg}
+            />
           </IconButton>
           <Menu
             anchorEl={anchorEl}
@@ -291,10 +296,12 @@ export default function Navbar({ open, handleDrawerOpen, setDarkMode }) {
             anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
           >
             <MenuItem onClick={handleClose1}>
-              <Avatar /> Profile
-            </MenuItem>
-            <MenuItem onClick={handleClose1}>
-              <Avatar /> My account
+              <Avatar
+                sx={{ border: "solid 3px White" }}
+                alt="Muhammed Saeed"
+                src={AvatarImg}
+              />
+              Muhammed Saeed
             </MenuItem>
             <Divider />
             <MenuItem onClick={handleClose1}>
